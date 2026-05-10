@@ -9,6 +9,7 @@
 <div align="left">
   <img src="https://raw.githubusercontent.com/leticiamontilla/leticiamontilla/stats-output/stats.svg" height="150" alt="stats graph"  />
   <img src="https://raw.githubusercontent.com/leticiamontilla/leticiamontilla/languages-output/languages.svg" height="150" alt="languages graph"  />
+  <img src="https://raw.githubusercontent.com/leticiamontilla/leticiamontilla/trophy-output/trophy.svg" height="150" alt="trophy graph"  />
   <img src="https://raw.githubusercontent.com/leticiamontilla/leticiamontilla/activity-graph-output/activity-graph.svg" height="300" alt="activity-graph graph"  />
 </div>
 
