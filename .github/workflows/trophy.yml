@@ -2,20 +2,33 @@ name: Generate trophy card
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # Cada 12 horas (arreglado el formato cron)
+    - cron: "0 */12 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Generate trophies
         uses: ryo-ma/github-profile-trophy@master
         with:
           screen_name: leticiamontilla
-          target_branch: trophy-output
-          # Aquí puedes añadir estilos si quieres, pero por ahora déjalo así
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: trophy-output
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
